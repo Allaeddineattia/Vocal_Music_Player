@@ -22,7 +22,7 @@ def load_list(path):
 
 
 #----------------main------------------
-
+print('\n\n play.py')
 piste=load_list("/tmp/music_to_play").pop(-1)
 print(piste)
 if (piste.replace("\n",'')==''):

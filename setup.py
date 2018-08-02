@@ -13,6 +13,10 @@ def connected_to_internet(url='http://www.google.com/', timeout=5):
     return False
 
 def make_dir():
+    if not(os.path.exists("./music_mp3")) :
+	    os.mkdir("./music_mp3",0755)
+    if not(os.path.exists("./saves")) :
+	    os.mkdir("./saves",0755)
     if not(os.path.exists("/usr/lib/vocal_player")) :
 	    os.mkdir("/usr/lib/vocal_player",0755)
     if not(os.path.exists("/usr/lib/vocal_player/instruction")) :
@@ -47,22 +51,22 @@ def time():
 
 def instruction():
     if not(os.path.exists("/usr/lib/vocal_player/welcome_to_vocale.mp3")):
-        string=gTTS(text="welcome to CLL vocale music player.", lang='en')
+        string=gTTS(text="welcome to C L L vocale music player.", lang='en')
         string.save("/usr/lib/vocal_player/welcome_to_vocale.mp3")
         
 
     if not(os.path.exists("/usr/lib/vocal_player/instruction/on.mp3")):
-        string=gTTS(text="to hear automaticaly the instructions press 5\n if this your first time please press 5", lang='en')
+        string=gTTS(text="press 5 to start the qutomatic guidance\n highly recomanded if this your first use", lang='en')
         string.save("/usr/lib/vocal_player/instruction/on.mp3")
         
 
     if not(os.path.exists("/usr/lib/vocal_player/instruction/first.mp3")):
-        string=gTTS(text="any time you need help press 5.", lang='en')
+        string=gTTS(text="If you're blocked press 5 for help.", lang='en')
         string.save("/usr/lib/vocal_player/instruction/first.mp3")
         
 
     if not(os.path.exists("/usr/lib/vocal_player/instruction/create.mp3")):
-        string=gTTS(text="press 0 to exit the program \n press 1 to create new list \n or press 2 to choice between saved listes", lang='en')
+        string=gTTS(text="press 0 to exit the program \n press 1 to create new list \n or press 2 to chose a saved listes", lang='en')
         string.save("/usr/lib/vocal_player/instruction/create.mp3")
         
 
@@ -77,12 +81,12 @@ def instruction():
         
 
     if not(os.path.exists("/usr/lib/vocal_player/instruction/create_2.mp3")):
-        string=gTTS(text="choice between saved listes", lang='en')
+        string=gTTS(text="chose between saved listes", lang='en')
         string.save("/usr/lib/vocal_player/instruction/create_2.mp3")
         
 
     if not(os.path.exists("/usr/lib/vocal_player/instruction/creation_option.mp3")):
-        string=gTTS(text="press 0 to exit the program \npress 1 to add \npress 2 to skip \npress 3 to add all the rest\n press 4 to rehear the name \n 6 to end selection", lang='en')
+        string=gTTS(text="press 0 to exit the program \npress 1 to add to list\npress 2 to ignore \npress 3 to add all the rest\n press 4 to rehear the name \n 6 to end selection", lang='en')
         string.save("/usr/lib/vocal_player/instruction/creation_option.mp3")
         
 
@@ -129,7 +133,7 @@ def instruction():
         
 
     if not(os.path.exists("/usr/lib/vocal_player/instruction/play_3.mp3")):
-        string=gTTS(text=" skip to next", lang='en')
+        string=gTTS(text="skip to next", lang='en')
         string.save("/usr/lib/vocal_player/instruction/play_3.mp3")
         
 
@@ -155,16 +159,16 @@ def instruction():
         
         
     if not(os.path.exists("/usr/lib/vocal_player/instruction/play_7.mp3")):
-        string=gTTS(text=" mute\unmute", lang='en')
+        string=gTTS(text=" mute unmute", lang='en')
         string.save("/usr/lib/vocal_player/instruction/play_7.mp3")
 
 
     if not(os.path.exists('/usr/lib/vocal_player/instruction/save_playlist_option.mp3')):
-        string=gTTS(text=" if you want to save the liste press 1", lang='en')
+        string=gTTS(text=" press 1 to save the list", lang='en')
         string.save("/usr/lib/vocal_player/instruction/save_playlist_option.mp3")
 
     if not(os.path.exists('/usr/lib/vocal_player/instruction/save_playlist.mp3')):
-        string=gTTS(text=" you have 8 slots to save from 1 to 9 exept the 5 wich will help to rehear this message or use 0 to cancel", lang='en')
+        string=gTTS(text=" Chose a slot from 1 to 9 exept the 5 wich remain used for help or use 0 to cancel", lang='en')
         string.save("/usr/lib/vocal_player/instruction/save_playlist.mp3")
 
     if not(os.path.exists('/usr/lib/vocal_player/instruction/save_cancled.mp3')):
@@ -172,19 +176,19 @@ def instruction():
         string.save("/usr/lib/vocal_player/instruction/save_cancled.mp3")
 
     if not(os.path.exists('/usr/lib/vocal_player/instruction/save_succeeded.mp3')):
-        string=gTTS(text="playlist saved in slot number", lang='en')
+        string=gTTS(text="playlist saved in slot number ", lang='en')
         string.save("/usr/lib/vocal_player/instruction/save_succeeded.mp3")
 
     if not(os.path.exists('/usr/lib/vocal_player/instruction/auto_on.mp3')):
-        string=gTTS(text="auto instruction hearing is on", lang='en')
+        string=gTTS(text="auto guidance is on", lang='en')
         string.save("/usr/lib/vocal_player/instruction/auto_on.mp3")
 
     if not(os.path.exists('/usr/lib/vocal_player/instruction/auto_off.mp3')):
-        string=gTTS(text="auto instruction hearing is off", lang='en')
+        string=gTTS(text="auto guidance is off", lang='en')
         string.save("/usr/lib/vocal_player/instruction/auto_off.mp3")
 
     if not(os.path.exists('/usr/lib/vocal_player/instruction/save_playlist_mode.mp3')):
-        string=gTTS(text="you are about to save the playlist", lang='en')
+        string=gTTS(text="you are about to save your playlist", lang='en')
         string.save("/usr/lib/vocal_player/instruction/save_playlist_mode.mp3")    
     
     if not(os.path.exists('/usr/lib/vocal_player/instruction/creation_mode.mp3')):
@@ -193,11 +197,23 @@ def instruction():
     
     if not(os.path.exists('/usr/lib/vocal_player/instruction/help.mp3')):
         string=gTTS(text="repress 5 to hear all instruction or press one of the other buttons to hear it funcionality", lang='en')
-        string.save("/usr/lib/vocal_player/instruction/help.mp3")    
+        string.save("/usr/lib/vocal_player/instruction/help.mp3")  
     
+    if not(os.path.exists('/usr/lib/vocal_player/instruction/slot_exist.mp3')):
+        string=gTTS(text="slot exist already", lang='en')
+        string.save("/usr/lib/vocal_player/instruction/slot_exist.mp3")
+
+    if not(os.path.exists('/usr/lib/vocal_player/instruction/pick_saved_cancled.mp3')):
+        string=gTTS(text="pick saved cancled", lang='en')
+        string.save("/usr/lib/vocal_player/instruction/pick_saved_cancled.mp3")
+
+    if not(os.path.exists('/usr/lib/vocal_player/instruction/pick_saved.mp3')):
+        string=gTTS(text="chose a slot", lang='en')
+        string.save("/usr/lib/vocal_player/instruction/pick_saved.mp3")
 
 
+
+make_dir()
 if (connected_to_internet()==True):
-    make_dir()
     time()
     instruction()

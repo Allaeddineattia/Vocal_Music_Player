@@ -1,4 +1,4 @@
-# playliste-manger-for-blind
+# playlist-manger-for-blind
 
 This is a full vocal guided programme for blind person so they can create playlistes and listen to theme. 
 

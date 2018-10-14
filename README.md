@@ -9,10 +9,10 @@ Internet connection is needed for the setup mode only or if new music tracks are
 
 Prerequisites:
 
-gTTS text to speech :
+-gTTS text to speech :
 sudo pip install gTTS
 
-playsound:
+-playsound:
 sudo pip install playsound
 
 

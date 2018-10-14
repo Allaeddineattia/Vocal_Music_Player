@@ -18,5 +18,6 @@ sudo pip install playsound
 
 Running the programme:
 -put your music in the music folder "./music", it's highly recommended to use taged mp3 files.
+
 -Then run: 
 python2.7 main.py

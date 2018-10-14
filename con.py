@@ -135,9 +135,13 @@ saveList(music_to_play,'/tmp/music_to_play')
 x=0
 
 
+while True:
+    try:
+        a=int(input('options:\n 0:stop \n 2:pause\\resume  \n 3:next \n 1:prec \n 6:volume down \n 9:volume up \n 7:mute\unmute \n 8:time  \n 5:instruction\ninput: '))
+        break
+    except :
+        print("plz use a number.")
 
-
-a=int(input('options:\n 0:stop \n 2:pause\\resume  \n 3:next \n 1:prec \n 6:volume down \n 9:volume up \n 7:mute\unmute \n 8:time  \n 5: instruction\n'))
 
 while (True):
     #os.system("ps |grep mpg123 >kill") 
@@ -172,5 +176,9 @@ while (True):
         os.system("python time.py")  
     elif a==5:
         playOption()
-    a=int(input('options:\n 0:stop \n 2:pause\\resume  \n 3:next \n 1:prec \n 6:volume down \n 9:volume up \n 7:mute\unmute \n 8:time  \n 5: instruction\n'))
-
+    while True:
+        try:
+            a=int(input('options:\n 0:stop \n 2:pause\\resume  \n 3:next \n 1:prec \n 6:volume down \n 9:volume up \n 7:mute\unmute \n 8:time  \n 5:instruction\ninput: '))
+            break
+        except :
+            print("plz use a number.")

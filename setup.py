@@ -3,7 +3,23 @@ import os
 from datetime import datetime
 import requests
 print('setup mode')
-
+def getPaths():
+    paths=["./music_mp3","./saves","/usr/lib/vocal_player","/usr/lib/vocal_player/instruction","/usr/lib/vocal_player/minute.mp3","/usr/lib/vocal_player/time.mp3"]
+    paths.extend(["/usr/lib/vocal_player/midnight.mp3","/usr/lib/vocal_player/clock.mp3","/usr/lib/vocal_player/welcome_to_vocale.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/on.mp3","/usr/lib/vocal_player/instruction/first.mp3","/usr/lib/vocal_player/instruction/create.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/create_0.mp3","/usr/lib/vocal_player/instruction/create_1.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/create_2.mp3","/usr/lib/vocal_player/instruction/creation_option.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/creation_option_0.mp3","/usr/lib/vocal_player/instruction/creation_option_1.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/creation_option_2.mp3","/usr/lib/vocal_player/instruction/creation_option_3.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/creation_option_4.mp3","/usr/lib/vocal_player/instruction/creation_option_6.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/play.mp3","/usr/lib/vocal_player/instruction/play_0.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/play_2.mp3","/usr/lib/vocal_player/instruction/play_3.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/play_1.mp3","/usr/lib/vocal_player/instruction/play_6.mp3","/usr/lib/vocal_player/instruction/play_9.mp3"])
+    paths.extend(["/usr/lib/vocal_player/instruction/play_8.mp3","/usr/lib/vocal_player/instruction/play_7.mp3",'/usr/lib/vocal_player/instruction/save_playlist_option.mp3'])
+    paths.extend(['/usr/lib/vocal_player/instruction/save_playlist.mp3','/usr/lib/vocal_player/instruction/save_cancled.mp3','/usr/lib/vocal_player/instruction/save_succeeded.mp3'])
+    paths.extend(['/usr/lib/vocal_player/instruction/slot_exist.mp3','/usr/lib/vocal_player/instruction/pick_saved.mp3'])
+    paths.extend(['/usr/lib/vocal_player/instruction/pick_saved_cancled.mp3',])
+    return(paths)
 def connected_to_internet(url='http://www.google.com/', timeout=5):
     try:
         _ = requests.get(url, timeout=timeout)
@@ -14,13 +30,13 @@ def connected_to_internet(url='http://www.google.com/', timeout=5):
 
 def make_dir():
     if not(os.path.exists("./music_mp3")) :
-	    os.mkdir("./music_mp3",0755)
+	    os.mkdir("./music_mp3",'0755')
     if not(os.path.exists("./saves")) :
-	    os.mkdir("./saves",0755)
+	    os.mkdir("./saves",'0755')
     if not(os.path.exists("/usr/lib/vocal_player")) :
-	    os.mkdir("/usr/lib/vocal_player",0755)
+	    os.mkdir("/usr/lib/vocal_player",'0755')
     if not(os.path.exists("/usr/lib/vocal_player/instruction")) :
-	    os.mkdir("/usr/lib/vocal_player/instruction",0755)
+	    os.mkdir("/usr/lib/vocal_player/instruction",'0755')
 
 def time():
     if not(os.path.exists("/usr/lib/vocal_player/minute.mp3")):
@@ -214,6 +230,7 @@ def instruction():
 
 
 make_dir()
-if (connected_to_internet()==True):
-    time()
-    instruction()
+
+# if (connected_to_internet()==True):
+#      time()
+#      instruction()

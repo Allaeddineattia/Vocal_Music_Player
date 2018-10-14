@@ -1,6 +1,6 @@
-# playlist-manger-for-blind
+# Vocal Music Player
 
-This is a full vocal guided programme for blind person so they can create playlistes and listen to theme. 
+This is a full vocal guided programme for blind person so they can create playlists and listen to them. 
 
 The programme is written on python and builded for linux system.
 
@@ -17,7 +17,6 @@ sudo pip install playsound
 
 
 Running the programme:
-Put the files in a folder and put your music in the music folder. 
-It's recommended to use taged mp3 file.
-Then run :
+-put your music in the music folder "./music", it's highly recommended to use taged mp3 files.
+-Then run: 
 python2.7 main.py

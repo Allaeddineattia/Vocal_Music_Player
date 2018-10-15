@@ -1,4 +1,8 @@
-import setup
+try : 
+    import setup
+except:
+    print('\n!!!!!!!\nsuper user mode is needed.\nre-execute the program as superuser.\nsudo python main.py\n!!!!!!!!')
+    exit(0)
 from gtts import gTTS
 from playsound import playsound
 import os
@@ -13,6 +17,16 @@ def checkCreatedInstruction(path):
     if not (os.path.exists(path)):
         print(path+ " missing")
         return(1)
+    else :
+        if (os.path.getsize(path) == 0): 
+            print(path+ " not created well")
+            try : 
+                os.system("sudo rm "+path)
+            except :
+                print('\n!!!!!!!\nsuper user mode is needed.\nre-execute the program as superuser.\nsudo python main.py\n!!!!!!!!')
+                exit(0)
+
+            return(1)
     print(path + ' is cheked.')
     return(0)
 

@@ -30,13 +30,15 @@ def connected_to_internet(url='http://www.google.com/', timeout=5):
 
 def make_dir():
     if not(os.path.exists("./music_mp3")) :
-	    os.mkdir("./music_mp3",'0755')
+	    os.mkdir("./music_mp3",0755)
     if not(os.path.exists("./saves")) :
-	    os.mkdir("./saves",'0755')
+	    os.mkdir("./saves",0755)
+    if not(os.path.exists("./music")) :
+	    os.mkdir("./music",0755)
     if not(os.path.exists("/usr/lib/vocal_player")) :
-	    os.mkdir("/usr/lib/vocal_player",'0755')
+	    os.mkdir("/usr/lib/vocal_player",0755)
     if not(os.path.exists("/usr/lib/vocal_player/instruction")) :
-	    os.mkdir("/usr/lib/vocal_player/instruction",'0755')
+	    os.mkdir("/usr/lib/vocal_player/instruction",0755)
 
 def time():
     if not(os.path.exists("/usr/lib/vocal_player/minute.mp3")):

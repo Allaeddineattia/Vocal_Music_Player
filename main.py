@@ -300,7 +300,9 @@ print('all needed files exists')
 #----------------message de reciption
 
 playsound('/usr/lib/vocal_player/welcome_to_vocale.mp3')
-    
+
+
+
 #---------les piles des piste musicaux
 
 musicToPlay=[]
@@ -308,6 +310,9 @@ music_played=[]
 
 
 musicFounded=findMusicTrack()
+if (musicFounded==[]):
+    print('no music founded')
+    exit(4)
 createTrackName(musicFounded)
 autoInstruction()
 
